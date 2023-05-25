@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "test1",
+  "version": "1.0",
+  "scripts": {
+    "cpp": "g++ -o output.exe test.cpp && ./output.exe"
+  }
+}
