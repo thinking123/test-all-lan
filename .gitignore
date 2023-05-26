@@ -2,3 +2,5 @@
 *.dSYM
 .history
 oc/*.
+obj
+bin
