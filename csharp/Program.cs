@@ -20,7 +20,7 @@ public class ClientRect
 public class HelloWorld
 {
 
-
+  // index 回滚: 6 -> 5 -> 4 -> 3 -> 2 -> 1
   static void SubdivideX(double x, double divisionInPixels, double division, int index, double y, double height, int tickLevel, int[] subdivs)
   {
     double[] tickHeights = new double[6] { 1.0, 0.6, 0.35, 0.25, 0.1, 0.075 };
