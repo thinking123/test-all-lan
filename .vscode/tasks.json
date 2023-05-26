@@ -30,6 +30,19 @@
                   "message": 5
               }
           }
+      },
+      {
+        "label": "build",
+        "command": "dotnet",
+        "type": "shell",
+        "args": [
+          "build",
+          "${workspaceFolder}/cs.csproj"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
       }
   ]
 }
