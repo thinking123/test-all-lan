@@ -6,6 +6,7 @@
     "precpp": "clear",
     "cpp": "g++  -o cpp/output.exe cpp/test.cpp && ./cpp/output.exe",
     "preoc": "clang oc/test.m -o ./oc/test -framework Foundation",
-    "oc": "./oc/test"
+    "oc": "./oc/test",
+    "cs": "dotnet run ./csharp/Program.cs"
   }
 }
