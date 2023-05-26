@@ -3,6 +3,9 @@
   "name": "test1",
   "version": "1.0",
   "scripts": {
-    "cpp": "g++ -o output.exe test.cpp && ./output.exe"
+    "precpp": "clear",
+    "cpp": "g++  -o cpp/output.exe cpp/test.cpp && ./cpp/output.exe",
+    "preoc": "clang oc/test.m -o ./oc/test -framework Foundation",
+    "oc": "./oc/test"
   }
 }
