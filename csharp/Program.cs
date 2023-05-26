@@ -2,6 +2,8 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
+using System.Linq;
+ 
 public class ClientRect
 {
   public int Left { get; set; }
@@ -27,7 +29,10 @@ public class HelloWorld
     double[] integerSubDivisors = new double[3] { 2.0, 5.0, 2.0 };
 
 
-    Console.WriteLine($"x:{x} , divisionInPixels: {divisionInPixels}, division: {division}, index: {index}, tickLevel: {tickLevel}");
+    string str = "";
+
+
+    Console.WriteLine($"{string.Join("", Enumerable.Repeat("-", 3- tickLevel))} {string.Join("", Enumerable.Repeat("  ", 3+ tickLevel))} x:{x} , divisionInPixels: {divisionInPixels}, division: {division}, index: {index}, tickLevel: {tickLevel}");
 
 
     double heightP = height * tickHeights[tickLevel];
@@ -49,7 +54,7 @@ public class HelloWorld
       }
       // divLookupIndex 获取 index 前面一个 刻度
       int divLookupIndex = (-index - 1) % integerSubDivisors.Length;
-      Console.WriteLine($"tickLevel:{tickLevel} , divLookupIndex: {divLookupIndex}, divisionInPixels: {divisionInPixels}");
+      // Console.WriteLine($"tickLevel:{tickLevel} , divLookupIndex: {divLookupIndex}, divisionInPixels: {divisionInPixels}");
       if (tickLevel == 0 && divLookupIndex != 0 && divisionInPixels <= 80.0)
       {
         divLookupIndex = 1; // 5
@@ -62,12 +67,12 @@ public class HelloWorld
       // { 2.0, 5.0, 2.0 }
       div = integerSubDivisors[divLookupIndex];
 
-      Console.WriteLine($"div:{div}");
+      // Console.WriteLine($"div:{div}");
     }
     double deltaDiv = divisionInPixels / div;
     double divisionP = division / div;
 
-    Console.WriteLine($"div:{div},deltaDiv:{deltaDiv},division:{division},divisionP:{divisionP},");
+    // Console.WriteLine($"div:{div},deltaDiv:{deltaDiv},division:{division},divisionP:{divisionP},");
     if (!(subdivs == null && divisionP != (double)(int)divisionP) && deltaDiv > 6.5)
     {
       for (int i = 0; (double)i < div; i++)
@@ -99,7 +104,7 @@ public class HelloWorld
     // 如果 majorDivisionPixels = 0.1 , majorSkip = 1000 , majorSkipPower = 9
     double[] majorDivisors = new double[3] { 2.0, 2.5, 2.0 };
 
-    while (majorDivisionPixels * majorSkip < 20.0)
+    while (majorDivisionPixels * majorSkip < 60.0)
     {
       // majorDivisors = new double[3] { 2.0, 2.5, 2.0 };
       majorSkip *= majorDivisors[majorSkipPower % majorDivisors.Length];
